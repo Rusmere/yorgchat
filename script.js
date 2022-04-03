@@ -36,6 +36,7 @@ window.onload = () => {
     var username = localStorage.getItem("name");
     if (username) {
         $('#register').hide();
+        $('#load').show();
         $('#msg').show();
         $('#inputmsg').show();
         $('#send').show();
