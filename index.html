@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yorgchat</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+        .name {
+            color: rgb(71, 128, 233);
+        }
+
+        .err {
+            color: red;
+        }
+
+        #msg {
+            width: 70%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+            left: 15%;
+            float: left;
+        }
+
+        #load {
+            position: relative;
+            left: 50%;
+            top: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="register">
+        <input autofocus id="input" type="text" class="form-control" placeholder="输入姓名 例如:Karry5307"></br>
+        <button id="done" class="btn btn-primary" onclick="savename($('#input').val())">完成</button>
+    </div>
+    <div id="msg" style="display: none;">
+        <div id="load" class="spinner-border text-primary"></div>
+    </div>
+    <input autofocus id="inputmsg" class="form-control" type="text" placeholder="输入消息" style="display: none;">
+    <button id="send" class="btn btn-primary" onclick="sendmsg()" style="display: none;">发送</button>
+    <button id="changename" class="btn btn-primary" onclick="changename()" style="display: none;">更改名称</button>
+</body>
+
+</html>
