@@ -14,7 +14,12 @@ var createsocket = () => {
         var data = JSON.parse(e.data);
         if (data.type == 'history') {
             data.history.forEach(element => {
-                $('#msg').append(`<div class="msg card"><div class="name">${element.username}</div>${element.message}</div>`);
+                if (element.username == localStorage.getItem("name")) {
+                    $('#msg').append(`<div class="me msg card"><div class="name">${element.username}</div>${element.message}</div>`);
+                }
+                else {
+                    $('#msg').append(`<div class="msg card"><div class="name">${element.username}</div>${element.message}</div>`);
+                }
             });
             $('#msg').scrollTop($('#msg')[0].scrollHeight);
             $('#load').hide();
@@ -39,7 +44,7 @@ var createsocket = () => {
     }
 }
 window.onload = () => {
-    $('#msg').attr('style', 'height:' + $(window).height() * 7 / 10 + 'px');
+    $('#msg').attr('style', 'height:' + $(window).height() * 2/3 + 'px');
     var username = localStorage.getItem("name");
     if (username) {
         $('#register').hide();
@@ -55,7 +60,7 @@ window.onbeforeunload = () => {
     ws.close();
 }
 window.onresize = () => {
-    $('#msg').attr('style', 'height:' + $(window).height() * 7 / 10 + 'px');
+    $('#msg').attr('style', 'height:' + $(window).height() *  2/3 + 'px');
 }
 var savename = (name) => {
     localStorage.setItem("name", name);

@@ -31,6 +31,16 @@
         .msg{
             width: 30%;
         }
+        #inputmsg{
+            width: 70%;
+            position: relative;
+            left: 15%;
+        }
+        #btns{
+            width: 70%;
+            position: relative;
+            left: 15%;
+        }
         .me{
             float: right;
         }
@@ -48,11 +58,13 @@
         <button id="done" class="btn btn-primary" onclick="savename($('#input').val())">完成</button>
     </div>
     <div id="msg" style="display: none;">
-        <div id="load" class="spinner-border text-primary" style="display: none;"></div>
+        <div id="load" class="spinner-border text-dark" style="display: none;"></div>
     </div>
     <input autofocus id="inputmsg" class="form-control" type="text" placeholder="输入消息" style="display: none;">
-    <button id="send" class="btn btn-primary" onclick="sendmsg()" style="display: none;">发送</button>
-    <button id="changename" class="btn btn-primary" onclick="changename()" style="display: none;">更改名称</button>
+    <div id="btns" class="btn-group" role="group" aria-label="controls">
+    <button id="send" class="btn btn-secondary btn-dark" onclick="sendmsg()" style="display: none;">发送</button>
+    <button id="changename" class="btn btn-secondary btn-dark" onclick="changename()" style="display: none;">更改名称</button>
+    </div>
 </body>
 
 </html>
