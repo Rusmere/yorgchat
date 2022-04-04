@@ -46,7 +46,7 @@ var createsocket = () => {
 window.onload = () => {
     var username = localStorage.getItem("name");
     if (username) {
-        $('#msg').css('height', ($(window).height() * 2 / 3).toString() + 'px');
+        $('#msg').css('height', $(window).height() * 2 / 3 + 'px');
         $('#register').hide();
         $('#load').show();
         $('#msg').show();
@@ -60,7 +60,7 @@ window.onbeforeunload = () => {
     ws.close();
 }
 window.onresize = () => {
-    $('#msg').css('height', ($(window).height() * 2 / 3).toString() + 'px');
+    $('#msg').css('height', $(window).height() * 2 / 3 + 'px');
 }
 var savename = (name) => {
     localStorage.setItem("name", name);
