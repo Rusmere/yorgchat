@@ -16,6 +16,7 @@ var createsocket = () => {
             data.history.forEach(element => {
                 if (element.username == localStorage.getItem("name")) {
                     $('#msg').append(`<div class="me msg card"><div class="name">${element.username}</div>${element.message}</div>`);
+                    $('#msg').append(`<div class="msg card" style="visibility: hidden"><div class="name">${element.username}</div>${element.message}</div>`);
                 }
                 else {
                     $('#msg').append(`<div class="msg card"><div class="name">${element.username}</div>${element.message}</div>`);
@@ -27,6 +28,7 @@ var createsocket = () => {
         else if (data.type == 'message') {
             if (data.username == localStorage.getItem("name")) {
                 $('#msg').append(`<div class="me msg card"><div class="name">${data.username}</div>${data.message}</div>`);
+                $('#msg').append(`<div class="msg card" style="visibility: hidden"><div class="name">${data.username}</div>${data.message}</div>`);
             } else {
                 $('#msg').append(`<div class="msg card"><div class="name">${data.username}</div>${data.message}</div>`);
             }
