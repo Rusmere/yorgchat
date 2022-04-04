@@ -28,6 +28,21 @@
             left: 15%;
             float: left;
         }
+        #register{
+            display: flex;
+        }
+        #input{
+            width: 50%;
+            position: relative;
+            left: 25%;
+            float: left;
+        }
+        #done{
+            width: 5%;
+            position: relative;
+            left: 25%;
+            float: left;
+        }
         .msg{
             width: 30%;
         }
@@ -55,7 +70,7 @@
 <body>
     <div id="register">
         <input autofocus id="input" type="text" class="form-control" placeholder="输入姓名 例如:Karry5307"></br>
-        <button id="done" class="btn btn-primary" onclick="savename($('#input').val())">完成</button>
+        <button id="done" class="btn btn-primary btn-dark" onclick="savename($('#input').val())">完成</button>
     </div>
     <div id="msg" style="display: none;">
         <div id="load" class="spinner-border text-dark" style="display: none;"></div>
