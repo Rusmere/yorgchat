@@ -16,13 +16,20 @@ var createsocket = () => {
             data.history.forEach(element => {
                 $('#msg').append(`<div class="msg card"><div class="name">${element.username}</div>${element.message}</div>`);
             });
+            $('#msg').scrollTop($('#msg')[0].scrollHeight);
             $('#load').hide();
         }
         else if (data.type == 'message') {
-            $('#msg').append(`<div class="msg card"><div class="name">${data.username}</div>${data.message}</div>`);
+            if (data.username == localStorage.getItem("name")) {
+                $('#msg').append(`<div class="me msg card"><div class="name">${data.username}</div>${data.message}</div>`);
+            } else {
+                $('#msg').append(`<div class="msg card"><div class="name">${data.username}</div>${data.message}</div>`);
+            }
+            $('#msg').scrollTop($('#msg')[0].scrollHeight);
         }
         else if (data.type == 'spam') {
             $('#msg').append(`<div class="msg card"><div class="err">Error</div>Too ${data.kind}</div>`);
+            $('#msg').scrollTop($('#msg')[0].scrollHeight);
         }
         else if (data.type == 'pong') {
         }
